@@ -4,7 +4,7 @@ import os
 def test_form():
 
     browser.open('/')
-    #browser.element('#main-header').should(have.text('Practice Form'))
+
     browser.element('#firstName').type('Vika')
     browser.element('#lastName').type('Islentyeva')
     browser.element('#userEmail').type('testik@mail.ru')
