@@ -33,7 +33,7 @@ def test_form():
         '11 June,1996' and
         'English' and
         'Reading' and
-
+        'images.jpeg' and
         'Moscow, Lenin street 42' and
         'Uttar Pradesh Agra'
     ))
