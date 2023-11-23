@@ -25,7 +25,10 @@ def test_form():
     browser.element('#submit').press_enter()
 
     browser.element('.modal-header').should(have.text('Thanks for submitting the form'))
-    browser.element('.table').should(have.text(
+
+    browser.all('[class=table-responsive]').should(have.texts(
+
+
         'Vika Islentyeva' and
         'testik@mail.ru' and
         'Female' and
@@ -38,4 +41,4 @@ def test_form():
         'Uttar Pradesh Agra'
     ))
 
-    browser.element('#closeLargeModal').press_enter()
+    #browser.element('#closeLargeModal').press_enter()
