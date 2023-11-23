@@ -3,7 +3,7 @@ from selene import browser, have, be, by
 import os
 def test_form():
 
-    browser.open('/')
+    browser.open('/automation-practice-form')
 
     browser.element('#firstName').type('Vika')
     browser.element('#lastName').type('Islentyeva')
@@ -16,6 +16,8 @@ def test_form():
     browser.element('.react-datepicker__day--025').click()
     browser.element('#subjectsInput').should(be.blank).type('English').press_enter()
     browser.element('[for="hobbies-checkbox-2"]').click()
+    browser.element('#uploadPicture').send_keys(os.path.abspath(
+        'resources/images.jpeg'))
 
     browser.element('#currentAddress').should(be.blank).type('Moscow, Lenin street 42')
     browser.element('#react-select-3-input').type('Uttar Pradesh').press_enter()
