@@ -10,36 +10,23 @@ def test_form():
     browser.element('#firstName').should(be.blank)
     browser.element('#firstName').should(have.attribute('placeholder').value('First Name'))
     browser.element('#firstName').type('Vika').press_enter()
-
-
-
-
     browser.element('#lastName').should(be.blank)
     browser.element('#lastName').should(have.attribute('placeholder').value('Last Name'))
     browser.element('#lastName').type('Islentyeva').press_enter()
-
     browser.element('#userEmail-label').should(have.exact_text('Email'))
     browser.element('#userEmail').should(be.blank)
     browser.element('#userEmail').should(have.attribute('placeholder').value('name@example.com'))
     browser.element('#userEmail').type('testik@mail.ru').press_enter()
-
-
-
     browser.element('#genterWrapper > div.col-md-3.col-sm-12').should(have.exact_text('Gender'))
     browser.all('[for*=gender-radio]').element_by(have.text('Female')).click()
-
-
     browser.element('#userNumber-label').should(have.exact_text('Mobile(10 Digits)'))
     browser.element('#userNumber-label > small').should(have.exact_text('(10 Digits)'))
     browser.element('#userNumber').should(be.blank)
     browser.element('#userNumber').should(have.attribute('placeholder').value('Mobile Number'))
     browser.element('#userNumber').type('89376541238')
-
-
     browser.element('#dateOfBirth-label').should(have.exact_text('Date of Birth'))
     browser.element('#dateOfBirthInput').should(have.value(datetime.now().strftime("%d %b %Y")))
     browser.element('#dateOfBirthInput').click()
-
     browser.all('.react-datepicker__month-select>option').element_by(have.exact_text('June')).click()
     browser.all('.react-datepicker__year-select>option').element_by(have.exact_text('1989')).click()
     browser.all('*.react-datepicker__day').element_by(have.text('15')).click()
@@ -80,20 +67,21 @@ def test_form():
 
     browser.element('#submit').press_enter()
 
-
-    # browser.element('.table-bordered').all('td').even.should(have.exact_texts(
-    #     'Vika Islentyeva',
-    #     'testik@mail.ru',
-    #     'Female',
-    #     '89376541238',
-    #     '25 June,2023',
-    #     'English',
-    #     'Reading',
-    #     'images.jpg',
-    #     'Moscow',
-    #     'Noida'
-    #     ))
-
+    # browser.all('[class=table-responsive]').should(have.texts(
+    #
+    # # # browser.element('.table-bordered').all('td').even.should(have.exact_texts(
+    # #     'Vika Islentyeva',
+    # #     'testik@mail.ru',
+    # #     'Female',
+    # #     '89376541238',
+    # #     '15 Jun,1989',
+    # #     'Computer Science',
+    # #     'Sports, Reading',
+    # #     'images.jpg',
+    # #     'Moscow',
+    # #     'NCR Noida'
+    # #     ))
+    #
 
 
 
